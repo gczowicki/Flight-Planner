@@ -51,9 +51,7 @@ class Route:
         for i in range(len(points) - 1):
             p1 = points[i]
             p2 = points[i + 1]
-
             leg = Leg.from_points(p1, p2)
-
             legs.append(leg)
             total_dist += leg.distance_nm
 
