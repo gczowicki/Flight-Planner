@@ -89,7 +89,7 @@ def create_flight_plan(payload: schemas.FlightPlanInput):
             speed=payload.wind.speed,
         )
 
-        route = flight_planner.Route.from_points(points)
+        route = flight_planner.Route.from_points(points, magnetic_declination=payload.magnetic_declination)
         flight_plan = flight_planner.FlightPlan.create_from_navlog(route, aircraft, wind)
 
         return round_for_output(flight_plan)
