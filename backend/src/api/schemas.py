@@ -24,6 +24,7 @@ class FlightPlanInput(BaseModel):
     route_points: List[PointInput] = Field(..., min_length=2)
     aircraft: AircraftInput
     wind: WindInput
+    magnetic_declination: Optional[float] = Field(None, ge=-30, le=30)
 
 
 class PointOutput(BaseModel):

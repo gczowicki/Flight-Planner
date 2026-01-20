@@ -19,11 +19,10 @@ class Leg:
     magnetic_declination: float
 
     @classmethod
-    def from_points(cls, p1: Point, p2: Point) -> "Leg":
+    def from_points(cls, p1: Point, p2: Point, magnetic_declination: float | None = None) -> "Leg":
         dist = calculations.calc_distance(p1.lat, p1.lon, p2.lat, p2.lon)
         tc = calculations.calc_course(p1.lat, p1.lon, p2.lat, p2.lon)
-
-        md = calculations.get_magnetic_declination(p1.lat, p1.lon)
+        md = calculations.get_magnetic_declination(p1.lat, p1.lon, override=magnetic_declination)
 
         return cls(
             start_point=p1,
@@ -41,7 +40,7 @@ class Route:
     total_distance_nm: float
 
     @classmethod
-    def from_points(cls, points: List[Point]) -> "Route":
+    def from_points(cls, points: List[Point], magnetic_declination: float | None = None) -> "Route":
         if len(points) < 2:
             return cls(points=points, legs=[], total_distance_nm=0.0)
 
@@ -51,7 +50,7 @@ class Route:
         for i in range(len(points) - 1):
             p1 = points[i]
             p2 = points[i + 1]
-            leg = Leg.from_points(p1, p2)
+            leg = Leg.from_points(p1, p2, magnetic_declination=magnetic_declination)
             legs.append(leg)
             total_dist += leg.distance_nm
 

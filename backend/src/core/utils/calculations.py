@@ -12,7 +12,9 @@ def _validate_coordinates(lat1: float, lon1: float, lat2: float, lon2: float) ->
         raise ValueError("Both longitudes must be in [-180, 180]")
 
 
-def get_magnetic_declination(lat: float, lon: float) -> float:
+def get_magnetic_declination(lat: float, lon: float, override: float | None = None) -> float:
+    if override is not None:
+        return override
     return DEFAULT_DECLINATION
 
 
