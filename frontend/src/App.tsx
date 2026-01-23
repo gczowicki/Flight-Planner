@@ -123,17 +123,11 @@ function App() {
       try {
         const response = await createFlightPlan({
           route_points: points,
-          aircraft: {
-            registration: 'SP-ABC',
-            model: 'Cessna 172',
-            tas,
-            gph: 8,
-          },
+          aircraft: { tas },
           wind: {
             direction: windDirection,
             speed: windSpeed,
-            magnetic_declination: magneticDeclination,
-          } as any,
+          },
           magnetic_declination: magneticDeclination,
         });
         setFlightPlan(response);

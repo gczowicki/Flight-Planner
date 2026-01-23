@@ -5,10 +5,10 @@ export interface PointInput {
 }
 
 export interface AircraftInput {
-  registration: string;
-  model: string;
+  registration?: string;
+  model?: string;
   tas: number;
-  gph: number;
+  gph?: number;
 }
 
 export interface WindInput {
