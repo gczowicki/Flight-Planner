@@ -128,5 +128,5 @@ npm install
 npm run dev
 ```
 
-API: `http://localhost:8000/docs`  
-App: `http://localhost:5173`
+- API: `http://localhost:8000/docs` 
+- App: `http://localhost:5173`
