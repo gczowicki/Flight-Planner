@@ -27,8 +27,9 @@ The architecture relies on several key design patterns:
 
 ## Tech Stack
 
-- **Backend:** FastAPI, Pydantic
+- **Backend:** Python, FastAPI, Pydantic
 - **Frontend:** React, TypeScript, Vite, Tailwind CSS, Leaflet
+- **Testing:** Pytest
 
 ## Calculations
 
@@ -127,5 +128,5 @@ npm install
 npm run dev
 ```
 
-API: `http://localhost:8000/docs`
-App: `http://localhost:5173`
+- API: `http://localhost:8000/docs` 
+- App: `http://localhost:5173`
