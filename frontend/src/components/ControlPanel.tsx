@@ -35,8 +35,8 @@ export default function ControlPanel({
         </label>
         <input
           type="range"
-          min="50"
-          max="200"
+          min="30"
+          max="250"
           value={tas}
           onChange={(e) => onTasChange(Number(e.target.value))}
           className="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer"

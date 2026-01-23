@@ -149,11 +149,11 @@ function App() {
       {/* Top Bar */}
       <header className="h-[60px] bg-gray-800 flex items-center justify-between px-6 shadow-md z-20 shrink-0">
         <div className="flex items-center gap-4">
-          <h1 className="text-white font-bold text-lg tracking-wide">Flight Planner v1.0.0</h1>
+          <h1 className="text-white font-bold text-lg tracking-wide">Flight Planner</h1>
         </div>
         <div className="flex items-center">
           <a
-            href="https://github.com/your-username/repo"
+            href="https://github.com/gczowicki/Flight-Planner"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-sm font-medium"
